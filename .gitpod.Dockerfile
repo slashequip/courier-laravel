@@ -18,7 +18,7 @@ RUN add-apt-repository ppa:ondrej/php && \
     php8.0-tokenizer \
     php8.0-xml \
     php8.0-zip && \
-    update-alternatives --set php /usr/bin/php8.1
+    update-alternatives --set php /usr/bin/php8.0
 
 USER root
 
