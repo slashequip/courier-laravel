@@ -1,24 +1,25 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "slashequip/courier-laravel",
+    "description": "This is my package courier-laravel",
     "keywords": [
-        ":vendor_name",
+        "slashequip",
         "laravel",
-        ":package_slug"
+        "courier-laravel"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/slashequip/courier-laravel",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Sam Jones",
+            "email": "sam@slashequip.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.0",
+        "illuminate/contracts": "^8.73",
         "spatie/laravel-package-tools": "^1.9.2",
-        "illuminate/contracts": "^8.73"
+        "trycourier/courier": "^1.5"
     },
     "require-dev": {
         "nunomaduro/collision": "^5.10",
@@ -34,30 +35,33 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Slashequip\\CourierLaravel\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Slashequip\\CourierLaravel\\Tests\\": "tests"
         }
     },
     "scripts": {
         "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest coverage"
+        "test-coverage": "vendor/bin/pest --coverage"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Slashequip\\CourierLaravel\\CourierServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "CourierLaravel": "Slashequip\\CourierLaravel\\Facades\\Courier"
             }
         }
     },
